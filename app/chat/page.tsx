@@ -16,7 +16,7 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
     openGraph: {
       title: product.liveVersion.name,
       description: product.liveVersion.description,
-      images: [{ width: 1200, height: 630, url: product.liveVersion.profileUrl }],
+      images: [{ type: "image/png", width: 1200, height: 630, url: product.liveVersion.profileUrl }],
     },
   };
 }
