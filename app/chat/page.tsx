@@ -4,23 +4,22 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-    { params, searchParams }: Props,
-    parent: ResolvingMetadata
-  ): Promise<Metadata> {
-    // read route params
-    const id = params.id
-   
-    // fetch data
-    const product = await fetch(`https://o7wc2ghhopwh7yac3an4sy6nma0ptyhu.lambda-url.us-east-1.on.aws/`).then((res) => res.json())
-   
-    return {
+export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const product = await fetch(`https://o7wc2ghhopwh7yac3an4sy6nma0ptyhu.lambda-url.us-east-1.on.aws/`).then((res) => res.json());
+
+  return {
+    title: product.liveVersion.name,
+    openGraph: {
       title: product.liveVersion.name,
-      openGraph: {
-        images: [product.liveVersion.profileUrl],
-      },
-    }
-  }
+      description: product.liveVersion.description,
+      images: [{ width: 1200, height: 630, url: product.liveVersion.profileUrl }],
+    },
+  };
+}
 
 export default function ChatPage({ params, searchParams }: Props) {
   return (
