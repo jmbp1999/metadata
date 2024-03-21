@@ -21,7 +21,7 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
   };
 }
 
-export default function ChatPage({ params, searchParams }: Props) {
+export default function ChatPage() {
   return (
     <div>
       <h1>Chat Page</h1>
