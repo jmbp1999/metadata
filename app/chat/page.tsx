@@ -1,6 +1,6 @@
-
 export default function ChatPage() {
-  return (
-<h1>Hello world</h1>
-  );
+  return <div>
+    <h1>Chat Page</h1>
+
+  </div> 
 }
