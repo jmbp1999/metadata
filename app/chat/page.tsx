@@ -1,6 +1,31 @@
-export default function ChatPage() {
-  return <div>
-    <h1>Chat Page</h1>
+import { Metadata, ResolvingMetadata } from "next";
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-  </div> 
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+    const id = params.id
+   
+    // fetch data
+    const product = await fetch(`https://o7wc2ghhopwh7yac3an4sy6nma0ptyhu.lambda-url.us-east-1.on.aws/`).then((res) => res.json())
+   
+    return {
+      title: product.liveVersion.name,
+      openGraph: {
+        images: [product.liveVersion.profileUrl],
+      },
+    }
+  }
+
+export default function ChatPage({ params, searchParams }: Props) {
+  return (
+    <div>
+      <h1>Chat Page</h1>
+    </div>
+  );
 }
