@@ -16,7 +16,12 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
     openGraph: {
       title: product.liveVersion.name,
       description: product.liveVersion.description,
-      images: [{ type: "image/png", width: 1200, height: 630, url: product.liveVersion.profileUrl }],
+      siteName: "ConvoGrid",
+      images: [        { url: product.liveVersion.profileUrl, width: 1200, height: 630 },
+
+        // Twitter Card image size (large)
+        { url: product.liveVersion.profileUrl, width: 1024, height: 512, alt: "Twitter Card Image" },
+],
     },
   };
 }
