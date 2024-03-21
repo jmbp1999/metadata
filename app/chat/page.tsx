@@ -1,11 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import {useRouter} from "next/navigation";
 
 export default function ChatPage() {
   return (
-    <main className={styles.main}>
-   
-    </main>
+<h1>Hello world</h1>
   );
 }
