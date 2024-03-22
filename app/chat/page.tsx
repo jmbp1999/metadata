@@ -19,10 +19,10 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
       ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: product.liveVersion.name,
       description: product.liveVersion.description,
-      images: [{ url: product.liveVersion.profileUrl, width: 1200, height: 630 }],
+      images: [product.liveVersion.profileUrl],
     },
   };
 }
