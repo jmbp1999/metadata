@@ -10,19 +10,18 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
 
   return {
     title: product.liveVersion.name,
+    description: product.liveVersion.description,
     openGraph: {
       title: product.liveVersion.name,
       description: product.liveVersion.description,
       siteName: "ConvoGrid",
-      images: [
-        { url: product.liveVersion.profileUrl, width: 1200, height: 630 }
-      ],
+      images: product.liveVersion.profileUrl,
     },
     twitter: {
       card: "summary_large_image",
       title: product.liveVersion.name,
       description: product.liveVersion.description,
-      images: [product.liveVersion.profileUrl],
+      images: product.liveVersion.profileUrl,
     },
   };
 }
