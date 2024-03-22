@@ -23,6 +23,13 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
         { url: product.liveVersion.profileUrl, width: 1024, height: 512, alt: "Twitter Card Image" },
 ],
     },
+    twitter:{
+        title:product.liveVersion.name,
+        description:product.liveVersion.description,
+        site: "@convogrid",
+        creator: "@convogrid",
+        images:[{ url: product.liveVersion.profileUrl, width: 1200, height: 630 }]
+    }
   };
 }
 
