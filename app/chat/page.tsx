@@ -5,10 +5,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  // read route params
-  const id = params.id;
 
-  // fetch data
   const product = await fetch(`https://o7wc2ghhopwh7yac3an4sy6nma0ptyhu.lambda-url.us-east-1.on.aws/`).then((res) => res.json());
 
   return {
@@ -17,19 +14,16 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
       title: product.liveVersion.name,
       description: product.liveVersion.description,
       siteName: "ConvoGrid",
-      images: [        { url: product.liveVersion.profileUrl, width: 1200, height: 630 },
-
-        // Twitter Card image size (large)
-        { url: product.liveVersion.profileUrl, width: 1024, height: 512, alt: "Twitter Card Image" },
-],
+      images: [
+        { url: product.liveVersion.profileUrl, width: 1200, height: 630 }
+      ],
     },
-    twitter:{
-        title:product.liveVersion.name,
-        description:product.liveVersion.description,
-        site: "@convogrid",
-        creator: "@convogrid",
-        images:[{ url: product.liveVersion.profileUrl, width: 1200, height: 630 }]
-    }
+    twitter: {
+      card: "summary",
+      title: product.liveVersion.name,
+      description: product.liveVersion.description,
+      images: [{ url: product.liveVersion.profileUrl, width: 1200, height: 630 }],
+    },
   };
 }
 
