@@ -19,5 +19,5 @@ const daysOfWeek = [
 export default function Image() {
   const today = new Date();
   const dayName = daysOfWeek[today.getDay()];
-  return new ImageResponse(<div>Happy {dayName}!</div>, { ...size });
+  return new ImageResponse(<div style={{display:"flex"}}>Happy {dayName}!</div>, { ...size });
 }
