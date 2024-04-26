@@ -9,12 +9,12 @@ export const metadata:Metadata = {
     card: 'summary_large_image',
     title: 'ConvoGrid',
     description: 'Create Conversational AI Bots with ease',
-    images:"https://intervee.s3.amazonaws.com/image.png"
+    images:"https://convogenerator.vercel.app/api/og"
   },
   openGraph: {
     title: 'ConvoGrid',
     description: 'Create Conversational AI Bots with ease',
-    images:"https://intervee.s3.amazonaws.com/image.png"
+    images:"https://convogenerator.vercel.app/api/og"
   },
 }
 
