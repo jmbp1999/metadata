@@ -9,9 +9,9 @@ async function getOGImages() {
 }
 
 // Dummy function to mimic fetching caption for an image
-async function getCaptionForImage(productId, imageId) {
+async function getCaptionForImage() {
   // Dummy implementation, replace with your actual logic
-  return `Caption for Image ${imageId}`;
+  return `Caption for Image`;
 }
 
 export async function generateImageMetadata({
