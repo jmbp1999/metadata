@@ -9,12 +9,12 @@ export const metadata:Metadata = {
     card: 'summary_large_image',
     title: 'ConvoGrid',
     description: 'Create Conversational AI Bots with ease',
-    images:"http://wso2.cachefly.net/wso2/sites/all/2023/images/choreodev/SM-Banner-YCWO.png"
+    images:"https://intervee.s3.amazonaws.com/image.png"
   },
   openGraph: {
     title: 'ConvoGrid',
     description: 'Create Conversational AI Bots with ease',
-    images:"http://wso2.cachefly.net/wso2/sites/all/2023/images/choreodev/SM-Banner-YCWO.png"
+    images:"https://intervee.s3.amazonaws.com/image.png"
   },
 }
 
