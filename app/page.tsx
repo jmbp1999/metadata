@@ -1,23 +1,33 @@
-import { Metadata } from "next";
+
+import { Metadata, ResolvingMetadata } from "next";
 import styles from "./page.module.css";
 import Button from "@/components/button";
 
-export const metadata:Metadata = {
-  title:"ConvoGrid",
-  description: 'Create Conversational AI Bots with ease',
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ConvoGrid',
-    description: 'Create Conversational AI Bots with ease',
-    images:"https://convogenerator.vercel.app/api/og"
-  },
-  openGraph: {
-    title: 'ConvoGrid',
-    description: 'Create Conversational AI Bots with ease',
-    images:"https://convogenerator.vercel.app/api/og"
-  },
-}
 
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const product = await fetch(`https://o7wc2ghhopwh7yac3an4sy6nma0ptyhu.lambda-url.us-east-1.on.aws/`).then((res) => res.json());
+
+  return {
+    title: product.liveVersion.name,
+    description:  product.liveVersion.description,
+    openGraph: {
+      title: product.liveVersion.name,
+      description: product.liveVersion.description,
+      siteName: "ConvoGrid",
+      images:"https://convogenerator.vercel.app/api/og",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.liveVersion.name,
+      description: product.liveVersion.description,
+      images:"https://convogenerator.vercel.app/api/og"
+    },
+  };
+}
 
 export default function Home() {
   return (
